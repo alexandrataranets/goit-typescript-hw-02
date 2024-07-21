@@ -1,9 +1,13 @@
-.imgList {
+.list {
+  margin: 10px;
   display: flex;
-  gap: 30px;
-  list-style-type: none;
+  flex-direction: row;
   flex-wrap: wrap;
-  margin: 30px;
-  justify-content: center;
-  
+  row-gap: 10px;
+  column-gap: 10px;
+}
+.item {
+  flex-basis: calc((100% - 40px) / 4);
+  height: 230px;
+  cursor: zoom-in;
 }

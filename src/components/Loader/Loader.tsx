@@ -1,21 +1,16 @@
-import { Audio } from 'react-loader-spinner';
+import { InfinitySpin } from 'react-loader-spinner';
+import css from './Loader.module.css';
 
-export default function Loader(){
+interface LoaderProps {
+  isVisible: boolean;
+}
 
-    return(
-        <div>
-        
-        <Audio
-  height="80"
-  width="80"
-//   radius="9"
-  color="blue"
-  ariaLabel="loading"
-//   wrapperStyle
-//   wrapperClass
-/>
-<p>Loading data, please wait...</p>
-        </div>
+export default function Loader({ isVisible }: LoaderProps) {
+  if (!isVisible) return null;
 
-    )
+  return (
+    <div className={css.loadbox}>
+      <InfinitySpin width="200" color="darkblue" />
+    </div>
+  );
 }

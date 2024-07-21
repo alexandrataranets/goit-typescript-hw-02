@@ -1,13 +1,14 @@
-.btnmore{
-     border: 1px solid black;
+.loadbtn {
+    margin: 10px auto;
+    background-color: darkblue;
+    color: whitesmoke;
     border-radius: 8px;
-    background-color: rgb(78, 78, 78);
-    color: white;
-    padding: 10px;
-    font-weight: 500;
-    font-size: medium;
+    border: none;
+    padding: 16px;
     display: flex;
     justify-content: center;
-    margin: 10px auto;
-
-}
+    align-items: center;
+    width: auto;
+    height: 30px;
+    font-size: 16px;
+  }

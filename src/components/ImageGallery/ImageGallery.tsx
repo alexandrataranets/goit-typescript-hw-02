@@ -1,23 +1,23 @@
-import ImageCard from "../ImageCard/ImageCard";
-import css from "./ImageGallery.module.css";
-import { Link } from "../App.types";
-import { Image } from "../App.types";
+import ImageCard from '../ImageCard/ImageCard';
+import css from './ImageGallery.module.css';
+import { Picture } from '../../types';
 
 interface ImageGalleryProps {
-  items: Image[];
-  onImageClick: (slug: string) => void;
+  items: Picture[];
+  onImageClick: (image: Picture) => void;
 }
 
-const ImageGallery: React.FC<ImageGalleryProps> = ({ items, onImageClick }) => {
+export default function ImageGallery({
+  items,
+  onImageClick,
+}: ImageGalleryProps) {
   return (
-    <ul className={css.imgList}>
-      {items.map(({ id, urls, slug }) => (
-        <li key={id}>
-          <ImageCard imgLink={urls} imgSlug={slug} onClick={onImageClick} />
+    <ul className={css.list}>
+      {items.map(item => (
+        <li className={css.item} key={item.id}>
+          <ImageCard image={item} onClick={() => onImageClick(item)} />
         </li>
       ))}
     </ul>
   );
-};
-
-export default ImageGallery;
+}

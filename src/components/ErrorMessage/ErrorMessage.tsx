@@ -1,3 +1,11 @@
-export default function ErrorMessage() {
-  return <p>Whoops, something went wrong! Please try reloading this page!</p>;
+interface ErrorMessageProps {
+  message: string;
+}
+
+export default function ErrorMessage({ message }: ErrorMessageProps) {
+  return (
+    <div>
+      <p>{message}</p>
+    </div>
+  );
 }
